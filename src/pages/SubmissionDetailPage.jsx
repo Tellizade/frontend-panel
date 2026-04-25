@@ -129,7 +129,7 @@ function SubmissionDetailPage() {
     };
 
     if (isLoading) return <div className="flex justify-center items-center h-screen bg-[#F8FAFC]"><span className="text-slate-500 font-medium">Yükleniyor...</span></div>;
-    if (error || !sub) return <div className="text-center p-12 text-rose-700 font-medium bg-[#F8FAFC]">Başvuru bulunamadı veya yetkiniz yok. URL'yi kontrol edin.</div>;
+    if (error || !sub) return <div className="text-center p-12 text-rose-700 font-medium bg-[#F8FAFC]">Başvuru bulunamadı veya yetkiniz yok. Adres çubuğunu kontrol edin.</div>;
 
     const step = getProgressStep(sub.status);
     const displayStatus = sub.status === 'Tam Metin Yüklendi' ? 'Sunum Bekleniyor' : sub.status;

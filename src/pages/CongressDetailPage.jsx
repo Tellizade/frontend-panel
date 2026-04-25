@@ -69,8 +69,8 @@ function CongressDetailPage() {
 
     // VERİ ÇEKME (QUERIES)
     const { data: congress, isLoading: isLoadingCongress, error: congressError } = useQuery({ queryKey: ['congress', congressId], queryFn: () => fetchCongressById(congressId) });
-    const { data: submissions, isLoading: isLoadingSubmissions, error: submissionsError } = useQuery({ queryKey: ['submissions', congressId], queryFn: () => fetchSubmissionsByCongressId(congressId) });
-    const { data: sessions, isLoading: isLoadingSessions, error: sessionsError } = useQuery({ queryKey: ['sessions', congressId], queryFn: () => fetchSessionsByCongressId(congressId) });
+    const { data: submissions, isLoading: isLoadingSubmissions } = useQuery({ queryKey: ['submissions', congressId], queryFn: () => fetchSubmissionsByCongressId(congressId) });
+    const { data: sessions, isLoading: isLoadingSessions } = useQuery({ queryKey: ['sessions', congressId], queryFn: () => fetchSessionsByCongressId(congressId) });
     const { data: reviewers, isLoading: isLoadingReviewers } = useQuery({ queryKey: ['reviewers', congressId], queryFn: () => fetchReviewersByCongressId(congressId) });
 
     // ==========================================

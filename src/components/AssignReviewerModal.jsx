@@ -10,7 +10,7 @@ const fetchReviewers = async () => {
     return response.data;
 };
 
-function AssignReviewerModal({ submissionId, onClose, onAssignSuccess }) {
+function AssignReviewerModal({ onClose, onAssignSuccess }) {
     const [selectedReviewers, setSelectedReviewers] = useState([]);
 
     // React Query ile hakem listesini çekiyoruz

@@ -39,7 +39,11 @@ const router = createBrowserRouter([
         )
       },
       {
-        index: true, 
+        index: true,
+        element: <LoginPage />
+      },
+      {
+        path: 'login',
         element: <LoginPage />
       },
       {
@@ -64,6 +68,14 @@ const router = createBrowserRouter([
             <ProtectedRoute>
                 <MyReviewsPage />
             </ProtectedRoute>
+        )
+      },
+      {
+        path: 'dashboard/reviews/:reviewId',
+        element: (
+          <ProtectedRoute>
+            <ReviewDetailPage />
+          </ProtectedRoute>
         )
       },
       {
