@@ -2,9 +2,13 @@
 
 import axios from 'axios';
 
-// Backend API'mizin ana adresini tanımlıyoruz.
+// Üretim: VITE_API_BASE_URL (örn. https://xxx.run.app/api). Geliştirme: localhost.
+const baseURL =
+    import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, '') ||
+    'http://localhost:3000/api';
+
 const apiClient = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: baseURL.endsWith('/api') ? baseURL : `${baseURL}/api`,
 });
 
 // Bu "interceptor", bizim postacımızın (axios) mektubu göndermeden hemen önce
